@@ -1,0 +1,26 @@
+import { Seller } from '../types';
+
+export const sellerOryxGas: Seller = {
+  id: 'seller-oryx-gas',
+  name: 'Oryx & Taifa Cooking Gas Express',
+  type: 'gas_depot',
+  categoryType: 'gas',
+  categoryLabel: 'Doorstep LPG Gas Refill & Exchange',
+  bannerImage: 'https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&w=900&q=80',
+  logoImage: 'https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&w=200&q=80',
+  rating: 4.9,
+  reviewCount: 310,
+  city: 'Dar es Salaam',
+  district: 'Kinondoni',
+  ward: 'Mikocheni B',
+  addressText: 'Old Bagamoyo Road, Gas Depot Station',
+  lat: -6.7640,
+  lng: 39.2470,
+  estimatedPrepMinutes: 15,
+  isOpen: true,
+  openingHours: '06:00 AM - 10:00 PM',
+  deliveryFeeBaseTzs: 2500,
+  minimumOrderTzs: 20000,
+  phoneContact: '+255 754 999 111',
+  tags: ['Oryx Gas', 'Taifa Gas', 'Mtungi wa Gesi'],
+};

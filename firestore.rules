@@ -1,0 +1,77 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    function getUserRole() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role;
+    }
+    
+    function isAdmin() {
+      return isAuthenticated() && getUserRole() == 'admin';
+    }
+
+    // Public catalogs: anyone (including guests) can read
+    match /cities/{cityId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    
+    match /sellers/{sellerId} {
+      allow read: if true;
+      allow update, write: if isAuthenticated() && (resource.data.ownerId == request.auth.uid || isAdmin());
+    }
+    
+    match /products/{productId} {
+      allow read: if true;
+      allow write: if isAuthenticated() && (
+        get(/databases/$(database)/documents/sellers/$(request.resource.data.sellerId)).data.ownerId == request.auth.uid
+        || isAdmin()
+      );
+    }
+
+    // User Private Profile
+    match /users/{userId} {
+      allow read, write: if isOwner(userId) || isAdmin();
+      
+      match /addresses/{addressId} {
+        allow read, write: if isOwner(userId);
+      }
+    }
+
+    // Orders: Customer, Seller, and Assigned Rider only
+    match /orders/{orderId} {
+      allow create: if isAuthenticated() && request.resource.data.customerId == request.auth.uid;
+      
+      allow read: if isAuthenticated() && (
+        resource.data.customerId == request.auth.uid ||
+        resource.data.sellerOwnerId == request.auth.uid ||
+        resource.data.riderId == request.auth.uid ||
+        isAdmin()
+      );
+      
+      // Status updates restricted by role
+      allow update: if isAuthenticated() && (
+        // Seller can confirm, prepare, mark ready
+        (resource.data.sellerOwnerId == request.auth.uid && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status', 'updatedAt', 'timeline'])) ||
+        // Rider can accept, update pickup, complete delivery
+        (resource.data.riderId == request.auth.uid) ||
+        isAdmin()
+      );
+    }
+
+    // Riders telemetry and shift state
+    match /riders/{riderId} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated() && (request.auth.uid == riderId || isAdmin());
+    }
+  }
+}

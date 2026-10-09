@@ -1,0 +1,26 @@
+import { Seller } from '../types';
+
+export const sellerKariakoo: Seller = {
+  id: 'seller-kariakoo-fresh',
+  name: 'Kariakoo Sokoni Fresh & Grains',
+  type: 'shop',
+  categoryType: 'groceries',
+  categoryLabel: 'Market Flours, Kyela Rice & Cooking Oils',
+  bannerImage: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80',
+  logoImage: 'https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=200&q=80',
+  rating: 4.8,
+  reviewCount: 189,
+  city: 'Dar es Salaam',
+  district: 'Ilala',
+  ward: 'Kariakoo',
+  addressText: 'Msimbazi Market Gate 4, Kariakoo',
+  lat: -6.8205,
+  lng: 39.2755,
+  estimatedPrepMinutes: 15,
+  isOpen: true,
+  openingHours: '07:00 AM - 08:00 PM',
+  deliveryFeeBaseTzs: 2000,
+  minimumOrderTzs: 3000,
+  phoneContact: '+255 713 456 789',
+  tags: ['Unga wa Sembe', 'Mchele wa Kyela', 'Mafuta'],
+};

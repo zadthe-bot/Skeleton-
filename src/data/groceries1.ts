@@ -1,0 +1,36 @@
+import { Product } from '../types';
+
+export const groceriesBatch1: Product[] = [
+  {
+    id: 'prod-unga-sembe',
+    sellerId: 'seller-kariakoo-fresh',
+    sellerName: 'Kariakoo Sokoni',
+    nameEn: 'Azam Sembe Flour (5 kg)',
+    nameSw: 'Unga wa Sembe Azam (Kilo 5)',
+    descriptionEn: 'High grade sifted maize flour by Bakhresa.',
+    descriptionSw: 'Unga safi wa sembe uliochekechwa kwa ugali mlaini.',
+    priceTzs: 9800,
+    imageUrl: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=600&q=80',
+    category: 'groceries',
+    menuSubcategory: 'Flour & Grains',
+    isFood: false,
+    isAvailable: true,
+    unit: '5 kg bag',
+  },
+  {
+    id: 'prod-mchele-kyela',
+    sellerId: 'seller-kariakoo-fresh',
+    sellerName: 'Kariakoo Sokoni',
+    nameEn: 'Kyela Rice (5 kg)',
+    nameSw: 'Mchele wa Kyela (Kilo 5)',
+    descriptionEn: 'Aromatic first-grade rice from Kyela.',
+    descriptionSw: 'Mchele wa daraja la kwanza kutoka Kyela Mbeya.',
+    priceTzs: 16500,
+    imageUrl: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80',
+    category: 'groceries',
+    menuSubcategory: 'Flour & Grains',
+    isFood: false,
+    isAvailable: true,
+    unit: '5 kg bag',
+  },
+];

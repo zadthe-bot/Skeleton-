@@ -1,0 +1,36 @@
+import { Product } from '../types';
+
+export const cookingGasBatch1: Product[] = [
+  {
+    id: 'prod-oryx-15kg',
+    sellerId: 'seller-oryx-gas',
+    sellerName: 'Oryx Gas Express',
+    nameEn: 'Oryx Gas 15 kg Refill (Empty Cylinder Swap)',
+    nameSw: 'Gesi ya Oryx Kg 15 (Badilisha Mtungi)',
+    descriptionEn: 'Doorstep 15kg Oryx cylinder exchange with safety seal.',
+    descriptionSw: 'Huduma ya kubadilisha mtungi wa Oryx kg 15 ulioisha.',
+    priceTzs: 56000,
+    imageUrl: 'https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&w=600&q=80',
+    category: 'gas',
+    menuSubcategory: 'Gas Refill',
+    isFood: false,
+    isAvailable: true,
+    unit: '15 kg cylinder',
+  },
+  {
+    id: 'prod-oryx-6kg',
+    sellerId: 'seller-oryx-gas',
+    sellerName: 'Oryx Gas Express',
+    nameEn: 'Oryx Gas 6 kg Refill (Empty Swap)',
+    nameSw: 'Gesi ya Oryx Kg 6 (Badilisha Mtungi)',
+    descriptionEn: 'Fast 6kg cylinder swap at your door.',
+    descriptionSw: 'Badilisha mtungi wa Oryx kg 6 ulioisha nyumbani.',
+    priceTzs: 24000,
+    imageUrl: 'https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&w=600&q=80',
+    category: 'gas',
+    menuSubcategory: 'Gas Refill',
+    isFood: false,
+    isAvailable: true,
+    unit: '6 kg cylinder',
+  },
+];

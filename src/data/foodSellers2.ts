@@ -1,0 +1,26 @@
+import { Seller } from '../types';
+
+export const sellerSamaki: Seller = {
+  id: 'seller-samaki',
+  name: 'Samaki Samaki Seafood & Grill',
+  type: 'restaurant',
+  categoryType: 'food',
+  categoryLabel: 'Ocean Seafood & Coastal Curries',
+  bannerImage: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=900&q=80',
+  logoImage: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=200&q=80',
+  rating: 4.9,
+  reviewCount: 520,
+  city: 'Dar es Salaam',
+  district: 'Kinondoni',
+  ward: 'Masaki',
+  addressText: 'Haile Selassie Rd, Masaki, Dar es Salaam',
+  lat: -6.7485,
+  lng: 39.2731,
+  estimatedPrepMinutes: 30,
+  isOpen: true,
+  openingHours: '12:00 PM - 12:00 AM',
+  deliveryFeeBaseTzs: 3500,
+  minimumOrderTzs: 10000,
+  phoneContact: '+255 689 332 110',
+  tags: ['Samaki wa Nazi', 'Prawns', 'Kamba Grills'],
+};

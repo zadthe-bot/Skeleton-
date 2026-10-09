@@ -1,0 +1,26 @@
+import { Seller } from '../types';
+
+export const sellerMamboz: Seller = {
+  id: 'seller-mamboz',
+  name: 'Mamboz Corner BBQ',
+  type: 'restaurant',
+  categoryType: 'food',
+  categoryLabel: 'Swahili Grills & Nyama Choma',
+  bannerImage: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80',
+  logoImage: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=200&q=80',
+  rating: 4.8,
+  reviewCount: 342,
+  city: 'Dar es Salaam',
+  district: 'Ilala',
+  ward: 'Upanga East',
+  addressText: 'Mosque Street & Indira Gandhi, Dar es Salaam',
+  lat: -6.8163,
+  lng: 39.2847,
+  estimatedPrepMinutes: 25,
+  isOpen: true,
+  openingHours: '11:00 AM - 11:30 PM',
+  deliveryFeeBaseTzs: 2500,
+  minimumOrderTzs: 5000,
+  phoneContact: '+255 754 889 012',
+  tags: ['Nyama Choma', 'Mishkaki', 'Chips Mayai'],
+};

@@ -1,0 +1,36 @@
+import { Order, TanzanianAddress, PaymentMethod, CartItem } from '../types';
+
+export const buildOrderEntity = (
+  address: TanzanianAddress,
+  paymentMethod: PaymentMethod,
+  items: CartItem[],
+  subtotal: number,
+  total: number,
+  sellerName: string,
+  notes = ''
+): Order => ({
+  id: `order-${Date.now()}`,
+  orderNumber: `STR-${Math.floor(10000 + Math.random() * 90000)}`,
+  customerId: 'user-1',
+  customerName: 'Juma Mwambene',
+  customerPhone: '+255 754 123 456',
+  sellerId: 'seller-1',
+  sellerName,
+  sellerAddress: 'Dar es Salaam',
+  sellerPhone: '+255 754 000 111',
+  items,
+  subtotalTzs: subtotal,
+  deliveryFeeTzs: 2500,
+  serviceFeeTzs: 800,
+  discountTzs: 0,
+  totalTzs: total,
+  status: 'pending_confirmation',
+  deliveryAddress: address,
+  paymentMethod,
+  paymentStatus: 'payment_successful',
+  estimatedDeliveryMinutes: 25,
+  createdAt: new Date().toISOString(),
+  updatedAt: new Date().toISOString(),
+  timeline: [{ status: 'pending_confirmation', timestamp: 'Just now', noteEn: 'Received', noteSw: 'Imepokewa' }],
+  deliveryInstructions: notes,
+});

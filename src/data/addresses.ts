@@ -1,0 +1,40 @@
+import { TanzanianAddress } from '../types';
+
+export const INITIAL_SAVED_ADDRESSES: TanzanianAddress[] = [
+  {
+    id: 'addr-1',
+    label: 'Home (Nyumbani)',
+    region: 'Dar es Salaam',
+    district: 'Kinondoni',
+    ward: 'Mikocheni B',
+    street: 'Old Bagamoyo Rd / Mwinyijuma',
+    landmark: 'Behind Regency Medical Center, House #14 (Black Gate)',
+    notesForRider: 'Ring the outer bell or call when at the gate',
+    lat: -6.7645,
+    lng: 39.2482,
+  },
+  {
+    id: 'addr-2',
+    label: 'Office (Kazini)',
+    region: 'Dar es Salaam',
+    district: 'Kinondoni',
+    ward: 'Masaki',
+    street: 'Toure Drive / Chole Road',
+    landmark: 'The Slipway Complex, 2nd Floor Office 204',
+    notesForRider: 'Drop at security reception desk',
+    lat: -6.7491,
+    lng: 39.2789,
+  },
+  {
+    id: 'addr-3',
+    label: 'Kariakoo Market Area',
+    region: 'Dar es Salaam',
+    district: 'Ilala',
+    ward: 'Kariakoo',
+    street: 'Msimbazi / Swahili Street',
+    landmark: 'Opposite Big Bon Petrol Station',
+    notesForRider: 'Park bike at corner kiosk',
+    lat: -6.8211,
+    lng: 39.2764,
+  },
+];
